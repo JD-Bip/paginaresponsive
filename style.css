@@ -1,0 +1,275 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1D202B;
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 40px;
+}
+h3{
+    color: black;
+    font-size: 30px;
+    text-align: left;
+}
+h2{
+    color: black;
+    font-size: 45px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+}
+p{
+    color:black;
+    
+}
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;/* 3 columnas, la de la mitad tiene mas tamaño*/
+    gap: 30px;
+}
+
+.contenedor-contenedor1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    grid-auto-rows: minmax(200px, auto);
+   
+}
+
+.contenedor-contenedor2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    grid-auto-rows: minmax(200px, auto);
+   
+}
+.contenedor-contenedor3{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 30px;
+   
+}
+
+.card {
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.5s ease-in, box-shadow 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: ease;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-1 {
+    background-color: bisque;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.highlight{
+    color: violet;
+    font-weight: bold;
+}
+
+.card-1 .boton{
+    background-color: rgb(245, 207, 37); /* Fondo del botón */
+    color: violet; /* Color del texto en el botón */
+    font-family: 'Aria', sans-serif;
+    font-size: 16px;
+    font-weight:bold ;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    
+}
+.card-1 .boton:hover {
+    background-color:  rgb(243, 214, 84); /* Color un poco más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Pequeño efecto de aumento */
+}
+
+.card-1 .boton:active {
+    background-color: rgb(117, 105, 52); /* Color aún más oscuro al hacer clic */
+    transform: scale(0.95); /* Pequeña reducción al hacer clic */
+}
+
+.card-2 {
+    background-color: rgb(100, 77, 201);
+    grid-column: span 2;
+}
+
+.highligt{
+    color: yellow;
+    font-weight: bold;
+}
+
+.card-3 {
+    display: flex;
+    background-color: rgb(245, 207, 37);
+    flex-direction: column;
+    justify-content: flex-start;
+    
+}
+
+.card-4 {
+    background-color: white;
+}
+
+.card-5 {
+    background-color: rgb(245, 207, 37);
+}
+
+.card-6 {
+    background-color: white;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   padding: 10px;
+}
+
+
+.card-7 {
+
+    background-color: rgb(100, 77, 201);
+    width: 218%;
+    display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-end;
+
+   padding: 10px;
+   border-radius: 10px;
+   
+}
+h4{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 35px;
+}
+
+.card-8 {
+    background-color: rgb(183, 142, 211);
+    grid-row: 1/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    flex-grow: 1;
+    gap: 20px;
+}
+.texto h3,.texto p{
+    margin: 0;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+    .contenedor {
+        display: flex;
+        flex-direction: column; /* Organiza las tarjetas en una columna */
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding: 20px 0; /* Ajuste del padding */
+    }
+
+    .contenedor-contenedor1,
+    .contenedor-contenedor2,
+    .contenedor-contenedor3 {
+        display: flex;
+        flex-direction: column; /* Organiza las tarjetas en una columna */
+        gap: 20px;
+    }
+
+    .card {
+        width: 100%; /* Asegura que las tarjetas ocupen todo el ancho */
+        min-height: 180px;
+        box-sizing: border-box; /* Asegura que el padding no haga que las tarjetas se desborden */
+    }
+
+    /* Establece el orden específico de las tarjetas usando flexbox */
+    .card-2 {
+        order: 1; /* card-2 aparece primero */
+    }
+
+    .card-4 {
+        order: 1; /* card-4 aparece segundo */
+    }
+
+    .card-5 {
+        order: 3; /* card-5 aparece tercero */
+    }
+
+    .card-8 {
+        order: 4; /* card-8 aparece cuarto */
+    }
+
+    .card-7 {
+        order: 5; /* card-7 aparece quinto */
+    }
+
+    .card-6 {
+        order: 6; /* card-6 aparece sexto */
+    }
+
+    .card-1 {
+        order: 7; /* card-1 aparece séptimo */
+    }
+
+    .card-3 {
+        order: 8; /* card-3 aparece octavo */
+    }
+
+    /* Ajuste de tamaños y estilos */
+    .texto h3 {
+        font-size: 1.2rem; /* Ajusta el tamaño del título */
+    }
+
+    .texto p {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+    }
+
+    .boton {
+        font-size: 1rem; /* Ajusta el tamaño del botón */
+        padding: 10px 20px; /* Ajusta el padding del botón */
+    }
+}
+
+
+
+
